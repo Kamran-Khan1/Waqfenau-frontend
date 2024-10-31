@@ -1,0 +1,97 @@
+<%- include('header.ejs') %>
+
+<nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+    <form class="d-flex" role="search">
+      <input
+        class="form-control me-2"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+      />
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+<!-- main div where everything will go -->
+<div class="container mheight mb-4">
+  <% if(locals.data){ %> <% if(deleteMessage.length > 0){ %>
+
+  <div
+    class="alert alert-warning alert-dismissible container fade show"
+    role="alert"
+  >
+    <strong><%= deleteMessage %></strong>
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="alert"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div class="toast-body"></div>
+
+  <% } %> <% if(updateMessage.length > 0){ %>
+
+  <div
+    class="alert alert-warning alert-dismissible container fade show"
+    role="alert"
+  >
+    <strong><%= updateMessage %></strong>
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="alert"
+      aria-label="Close"
+    ></button>
+  </div>
+
+  <% } %>
+
+  <table class="table table-dark table-striped table-hover">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Waqf-E-Nau</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% data.forEach(item => { %>
+      <tr>
+        <th scope="row"><%= item.id %></th>
+        <td><a href="/waqfenau/<%=item.id%>"><%= item.name %></a></td>
+        <td>
+          <%= item.wfnumber %>
+          <a href="/waqfenau/update/<%=item.id%>" class="mx-4"
+            ><i
+              class="fa-solid fa-pen-to-square fa-xl"
+              style="color: #74c0fc"
+            ></i
+          ></a>
+          <a href="/waqfenau/delete/<%=item.id%>" class="mx-2"
+            ><i class="fa-solid fa-trash-can" style="color: #f57a7a"></i>
+          </a>
+        </td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+  <% } else{%>
+
+  <div class="d-flex justify-content-center my-4">
+    <div class="spinner-grow text-info" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+  <div class="alert alert-primary d-flex align-items-center" role="alert">
+    <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Info:">
+      <use xlink:href="#info-fill" />
+    </svg>
+    <div class="fs-1"><%= message %></div>
+  </div>
+  <% } %>
+</div>
+
+<%- include('footer.ejs') %>

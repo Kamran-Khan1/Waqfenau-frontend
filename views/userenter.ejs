@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Waq-fe-nau</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+</html>
+
+<% if(message.length > 0){ %>
+
+<div
+  class="alert alert-success mt-4 alert-dismissible container fade show"
+  role="alert"
+>
+  <strong><%= message %></strong>
+  <button
+    type="button"
+    class="btn-close"
+    data-bs-dismiss="alert"
+    aria-label="Close"
+  ></button>
+</div>
+
+<% } %>
+
+<div class="container my-5">
+  <form
+    class="row g-3 bg-success-subtle rounded p-4"
+    action="/waqfenau/data/post"
+    method="post"
+  >
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Waq-fe-nau NO</label>
+      <input
+        type="text"
+        class="form-control"
+        name="wfnumber"
+        id="inputEmail4"
+        required
+      />
+    </div>
+
+    <div class="col-md-6">
+      <label for="inputPassword4" class="form-label">name</label>
+      <input
+        type="text"
+        class="form-control"
+        name="name"
+        id="inputPassword4"
+        required
+      />
+    </div>
+
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Fathers Name</label>
+      <input
+        type="text"
+        class="form-control"
+        name="fname"
+        id="inputEmail4"
+        required
+      />
+    </div>
+
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Mothers Name</label>
+      <input
+        type="text"
+        class="form-control"
+        name="mname"
+        id="inputEmail4"
+        required
+      />
+    </div>
+
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Mobile Number</label>
+      <input
+        type="tel"
+        pattern="[0-1]{2}[0-9]{9}"
+        placeholder="01*********"
+        class="form-control"
+        name="mobile"
+        id="inputEmail4"
+        required
+      />
+    </div>
+
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Date of Birth</label>
+      <input
+        type="date"
+        class="form-control"
+        name="dob"
+        id="inputEmail4"
+        required
+      />
+    </div>
+
+    <div class="col-12">
+      <label for="inputAddress" class="form-label">Jamat</label>
+      <input
+        name="jamat"
+        type="text"
+        class="form-control"
+        id="inputAddress"
+        placeholder="Brahmanbaria"
+        required
+      />
+    </div>
+
+    <div class="col-12">
+      <label for="inputAddress" class="form-label">Halka</label>
+      <input
+        name="halka"
+        type="text"
+        class="form-control"
+        id="inputAddress"
+        placeholder="Shimrail Kandi"
+        required
+      />
+    </div>
+
+    <div class="col-md-6">
+      <label for="inputAddress2" class="form-label">Work</label>
+      <input
+        name="work"
+        type="text"
+        class="form-control"
+        id="inputAddress2"
+        placeholder="Remote job"
+        required
+      />
+    </div>
+
+    <div class="col-md-6">
+      <label for="inputAddress2" class="form-label">Class</label>
+      <input
+        type="number"
+        class="form-control"
+        id="inputAddress2"
+        placeholder="11"
+        name="study"
+        required
+      />
+    </div>
+
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Any Post in Jamat?</label>
+      <input
+        type="text"
+        class="form-control"
+        name="jpost"
+        id="inputEmail4"
+        required
+      />
+    </div>
+
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Comment</label>
+      <input type="text" class="form-control" name="comment" id="inputEmail4" />
+    </div>
+
+    <div class="col-md-4">
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          name="quran"
+          value="true"
+          type="checkbox"
+          id="gridCheck"
+        />
+        <label class="form-check-label" for="gridCheck">
+          Read Quran regularly?
+        </label>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          name="syllabus"
+          value="true"
+          type="checkbox"
+          id="gridCheck"
+        />
+        <label class="form-check-label" for="gridCheck">
+          Finished your Waqfenau Syllabus?
+        </label>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          name="joccations"
+          value="true"
+          type="checkbox"
+          id="gridCheck"
+        />
+        <label class="form-check-label" for="gridCheck">
+          Attend Jamat Occation Regularly?
+        </label>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          name="letter"
+          value="true"
+          type="checkbox"
+          id="gridCheck"
+        />
+        <label class="form-check-label" for="gridCheck">
+          Letter to huzur regularly?
+        </label>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary">POST</button>
+    </div>
+  </form>
+</div>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+  crossorigin="anonymous"
+></script>

@@ -1,0 +1,455 @@
+<%- include('header.ejs') %> <% if(locals.data){ %>
+
+<div class="container mt-5">
+  <form
+    class="row g-3 bg-success-subtle rounded p-4"
+    action="/post/update/<%= data.id %>"
+    method="post"
+  >
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Waq-fe-nau NO</label>
+      <input
+        type="text"
+        class="form-control"
+        name="wfnumber"
+        id="inputEmail4"
+        value="<%=data.wfnumber%>"
+        required
+      />
+    </div>
+
+    <div class="col-md-6">
+      <label for="inputPassword4" class="form-label">name</label>
+      <input
+        type="text"
+        class="form-control"
+        name="name"
+        id="inputPassword4"
+        required
+        value="<%=data.name%>"
+      />
+    </div>
+
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Fathers Name</label>
+      <input
+        type="text"
+        class="form-control"
+        name="fname"
+        id="inputEmail4"
+        required
+        value="<%=data.fname%>"
+      />
+    </div>
+
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Mothers Name</label>
+      <input
+        type="text"
+        class="form-control"
+        name="mname"
+        id="inputEmail4"
+        required
+        value="<%=data.mname%>"
+      />
+    </div>
+
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Mobile Number</label>
+      <input
+        type="tel"
+        pattern="[0-1]{2}[0-9]{9}"
+        placeholder="01*********"
+        class="form-control"
+        name="mobile"
+        id="inputEmail4"
+        required
+        value="<%=data.mobile%>"
+      />
+    </div>
+
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Date of Birth</label>
+      <input
+        type="date"
+        class="form-control"
+        name="dob"
+        id="inputEmail4"
+        required
+        value="<%=data.dob%>"
+      />
+    </div>
+
+    <div class="col-12">
+      <label for="inputAddress" class="form-label">Jamat</label>
+      <input
+        name="jamat"
+        type="text"
+        class="form-control"
+        id="inputAddress"
+        placeholder="Brahmanbaria"
+        required
+        value="<%=data.jamat%>"
+      />
+    </div>
+
+    <div class="col-12">
+      <label for="inputAddress" class="form-label">Halka</label>
+      <input
+        name="halka"
+        type="text"
+        class="form-control"
+        id="inputAddress"
+        placeholder="Shimrail Kandi"
+        required
+        value="<%=data.halka%>"
+      />
+    </div>
+
+    <div class="col-md-6">
+      <label for="inputAddress2" class="form-label">Work</label>
+      <input
+        name="work"
+        type="text"
+        class="form-control"
+        id="inputAddress2"
+        placeholder="Remote job"
+        required
+        value="<%=data.work%>"
+      />
+    </div>
+
+    <div class="col-md-6">
+      <label for="inputAddress2" class="form-label">Class</label>
+      <input
+        type="number"
+        class="form-control"
+        id="inputAddress2"
+        placeholder="11"
+        name="study"
+        required
+      />
+    </div>
+
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Any Post in Jamat?</label>
+      <input
+        type="text"
+        class="form-control"
+        name="jpost"
+        id="inputEmail4"
+        required
+        value="<%=data.jpost%>"
+      />
+    </div>
+
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Comment</label>
+      <input
+        value="<%=data.comment%>"
+        type="text"
+        class="form-control"
+        name="comment"
+        id="inputEmail4"
+      />
+    </div>
+
+    <div class="col-md-4">
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          name="quran"
+          value="true"
+          type="checkbox"
+          id="gridCheck"
+        />
+        <label class="form-check-label" for="gridCheck">
+          Read Quran regularly?
+        </label>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          name="syllabus"
+          value="true"
+          type="checkbox"
+          id="gridCheck"
+        />
+        <label class="form-check-label" for="gridCheck">
+          Finished your Waqfenau Syllabus?
+        </label>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          name="joccations"
+          value="true"
+          type="checkbox"
+          id="gridCheck"
+        />
+        <label class="form-check-label" for="gridCheck">
+          Attend Jamat Occation Regularly?
+        </label>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          name="letter"
+          value="true"
+          type="checkbox"
+          id="gridCheck"
+        />
+        <label class="form-check-label" for="gridCheck">
+          Letter to huzur regularly?
+        </label>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary">POST</button>
+    </div>
+  </form>
+</div>
+
+<% }else{%> <% if(message.length > 0){ %>
+
+<div
+  class="alert alert-success alert-dismissible container fade show"
+  role="alert"
+>
+  <strong><%= message %></strong>
+  <button
+    type="button"
+    class="btn-close"
+    data-bs-dismiss="alert"
+    aria-label="Close"
+  ></button>
+</div>
+<div class="toast-body"></div>
+
+<% } %>
+
+<div class="container my-5">
+  <form
+    class="row g-3 bg-success-subtle rounded p-4"
+    action="/12nb23n1m1n23nabjsnlan1kn2j/post"
+    method="post"
+  >
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Waq-fe-nau NO</label>
+      <input
+        type="text"
+        class="form-control"
+        name="wfnumber"
+        id="inputEmail4"
+        required
+      />
+    </div>
+
+    <div class="col-md-6">
+      <label for="inputPassword4" class="form-label">name</label>
+      <input
+        type="text"
+        class="form-control"
+        name="name"
+        id="inputPassword4"
+        required
+      />
+    </div>
+
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Fathers Name</label>
+      <input
+        type="text"
+        class="form-control"
+        name="fname"
+        id="inputEmail4"
+        required
+      />
+    </div>
+
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Mothers Name</label>
+      <input
+        type="text"
+        class="form-control"
+        name="mname"
+        id="inputEmail4"
+        required
+      />
+    </div>
+
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Mobile Number</label>
+      <input
+        type="tel"
+        pattern="[0-1]{2}[0-9]{9}"
+        placeholder="01*********"
+        class="form-control"
+        name="mobile"
+        id="inputEmail4"
+        required
+      />
+    </div>
+
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Date of Birth</label>
+      <input
+        type="date"
+        class="form-control"
+        name="dob"
+        id="inputEmail4"
+        required
+      />
+    </div>
+
+    <div class="col-12">
+      <label for="inputAddress" class="form-label">Jamat</label>
+      <input
+        name="jamat"
+        type="text"
+        class="form-control"
+        id="inputAddress"
+        placeholder="Brahmanbaria"
+        required
+      />
+    </div>
+
+    <div class="col-12">
+      <label for="inputAddress" class="form-label">Halka</label>
+      <input
+        name="halka"
+        type="text"
+        class="form-control"
+        id="inputAddress"
+        placeholder="Shimrail Kandi"
+        required
+      />
+    </div>
+
+    <div class="col-md-6">
+      <label for="inputAddress2" class="form-label">Work</label>
+      <input
+        name="work"
+        type="text"
+        class="form-control"
+        id="inputAddress2"
+        placeholder="Remote job"
+        required
+      />
+    </div>
+
+    <div class="col-md-6">
+      <label for="inputAddress2" class="form-label">Class</label>
+      <input
+        type="number"
+        class="form-control"
+        id="inputAddress2"
+        placeholder="11"
+        name="study"
+        required
+      />
+    </div>
+
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Any Post in Jamat?</label>
+      <input
+        type="text"
+        class="form-control"
+        name="jpost"
+        id="inputEmail4"
+        required
+      />
+    </div>
+
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Comment</label>
+      <input type="text" class="form-control" name="comment" id="inputEmail4" />
+    </div>
+
+    <div class="col-md-4">
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          name="quran"
+          value="true"
+          type="checkbox"
+          id="gridCheck"
+        />
+        <label class="form-check-label" for="gridCheck">
+          Read Quran regularly?
+        </label>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          name="syllabus"
+          value="true"
+          type="checkbox"
+          id="gridCheck"
+        />
+        <label class="form-check-label" for="gridCheck">
+          Finished your Waqfenau Syllabus?
+        </label>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          name="joccations"
+          value="true"
+          type="checkbox"
+          id="gridCheck"
+        />
+        <label class="form-check-label" for="gridCheck">
+          Attend Jamat Occation Regularly?
+        </label>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          name="letter"
+          value="true"
+          type="checkbox"
+          id="gridCheck"
+        />
+        <label class="form-check-label" for="gridCheck">
+          Letter to huzur regularly?
+        </label>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary">POST</button>
+    </div>
+  </form>
+</div>
+
+<% } %>
+
+<script
+  src="https://kit.fontawesome.com/a7b6b8e1b8.js"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+  crossorigin="anonymous"
+></script>
