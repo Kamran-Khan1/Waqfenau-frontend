@@ -155,27 +155,17 @@
                 <label for="inputEmail4" class="form-label"
                   >Read Quran Regularly?</label
                 >
-                <input
-                  class="form-control"
-                  type="text"
-                  value="<%= data.quran %>"
-                  aria-label="Disabled input example"
-                  disabled
-                  readonly
-                />
+                <input class="form-control" type="text" value="<%= data.quran?
+                "Yes": "No" %>" aria-label="Disabled input example" disabled
+                readonly />
               </div>
               <div class="col-md-4">
                 <label for="inputPassword4" class="form-label"
                   >Letter to Huzur Regularly?</label
                 >
-                <input
-                  class="form-control"
-                  type="text"
-                  value="<%= data.letter %>"
-                  aria-label="Disabled input example"
-                  disabled
-                  readonly
-                />
+                <input class="form-control" type="text" value="<%= data.letter?
+                "Yes" : "No" %>" aria-label="Disabled input example" disabled
+                readonly />
               </div>
             </div>
             <div class="row g-3 mt-4">
@@ -183,27 +173,17 @@
                 <label for="inputEmail4" class="form-label"
                   >Completed Waqf-E-Nau Syllabus?</label
                 >
-                <input
-                  class="form-control"
-                  type="text"
-                  value="<%= data.syllabus %>"
-                  aria-label="Disabled input example"
-                  disabled
-                  readonly
-                />
+                <input class="form-control" type="text" value="<%=
+                data.syllabus? "Yes": "No" %>" aria-label="Disabled input
+                example" disabled readonly />
               </div>
               <div class="col-md-4">
                 <label for="inputPassword4" class="form-label"
                   >Attend Jamati Occations?</label
                 >
-                <input
-                  class="form-control"
-                  type="text"
-                  value="<%= data.joccations %>"
-                  aria-label="Disabled input example"
-                  disabled
-                  readonly
-                />
+                <input class="form-control" type="text" value="<%=
+                data.joccations? "Yes":"No" %>" aria-label="Disabled input
+                example" disabled readonly />
               </div>
               <div class="col-md-4">
                 <label for="inputPassword4" class="form-label"
